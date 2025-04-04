@@ -1,22 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
 
-const Submit = () => {
-	
-	const [inputValue, setInputValue] = useState("");
-
-
-	const handleSubmit= (e) => {
-		e.preventDefault();
-		
-			
-		}
-
-	
+const Submit = ({ isEditable, handleSubmit }) => {
 	return (
 	<button
 		type="submit"
+		disabled={!isEditable}
 		onClick={() => handleSubmit}
 		>
 	</ button>
@@ -24,3 +14,5 @@ const Submit = () => {
 }
 
 export default Submit;
+
+

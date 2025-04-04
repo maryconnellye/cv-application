@@ -1,34 +1,7 @@
-import Submit from "./submit";
-import { useState } from "react";
+import React from "react";
 
-const Form = () => {
 
-const [formData, setFormData] = useState({
-
-	nameInput: "",
-	emailInput: "", 
-	phoneInput: "", 
-	schoolInput: "",
-	studyInput: "", 
-	studyDateInput: "", 
-	graduationDateInput: "", 
-	companyInput: "", 
-	positionInput: "", 
-	responsibilitiesInput: "",
-	startDateInput: "", 
-	endDateInput: "", 
-	isEditable: "",
-	handleInputChange: ""
-});
-
-const handleInputChange = (e) => {
-	const { name, value } = e.target; 
-	setFormData((prevData) => ({
-		...prevData, 
-		[name]: value
-	}));
-	};
-;
+const Form = ({ formData, handleInputChange, isEditable }) => {
 
 return(
 	<>
