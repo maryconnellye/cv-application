@@ -1,4 +1,5 @@
 import React from "react";
+import Submit from "./submit";
 
 
 const Form = ({ formData, handleInputChange, isEditable }) => {
@@ -75,7 +76,7 @@ return(
 		</div>
 
 		<h1>Practical Experience</h1>
-			<div className="practical-experience">
+			<div className="practicalExperience">
 				<input 
 					type="text"
 					placeholder="Company Name"
@@ -119,6 +120,8 @@ return(
 					onChange={handleInputChange}
 					/>
 			</div>
+
+			<Submit />
 		</ >
 )
 }
