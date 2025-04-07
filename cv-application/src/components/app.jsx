@@ -6,7 +6,7 @@ import Submit from "./submit";
 const App = () => {
 	
 	const [submitted, setSubmitted] = useState(false);	
-	const [isEditable, setIsEditable ] = useState(true);
+	const [editMode, setEditMode ] = useState(true);
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "", 
@@ -20,7 +20,7 @@ const App = () => {
 		responsibilities: "",
 		start: "", 
 		end: "", 
-		isEditable: "",
+		editMode: "",
 		handleInputChange: ""
 	});
 
@@ -35,19 +35,19 @@ const App = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setSubmitted(true);
-		setIsEditable(false);
+		setEditMode(false);
 		console.log(formData)
 	}
 
 		
 	const handleEdit = () => {
-			setIsEditable(true);
+			setEditMode(true);
 		}
 		
 	return(
 	<>
 		<Form 
-			isEditable={isEditable}
+			editMode={editMode}
 			submitted={submitted}
 			formData={formData}
 			handleSubmit={handleSubmit}
@@ -55,7 +55,7 @@ const App = () => {
 			handleEdit={handleEdit}
 			/>
 
-			{isEditable ? <Submit /> : <Edit />}
+			{editMode ? <Submit /> : <Edit />}
 	</ >
 )
 }
