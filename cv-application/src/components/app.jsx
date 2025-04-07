@@ -1,63 +1,50 @@
 import React, { useState } from "react"
 import Form from "./form";
 import Edit from "./edit";
-import Submit from "./submit";
 
 const App = () => {
 
 	const [formData, setFormData] = useState({
-		nameInput: "",
-		emailInput: "", 
-		phoneInput: "", 
-		schoolInput: "",
-		studyInput: "", 
-		studyDateInput: "", 
-		graduationDateInput: "", 
-		companyInput: "", 
-		positionInput: "", 
-		responsibilitiesInput: "",
-		startDateInput: "", 
-		endDateInput: "", 
+		name: "",
+		email: "", 
+		phone: "", 
+		school: "",
+		study: "", 
+		studyStart: "", 
+		graduation: "", 
+		company: "", 
+		position: "", 
+		responsibilities: "",
+		start: "", 
+		end: "", 
 		isEditable: "",
 		handleInputChange: ""
 	});
-
-	const [ isEditable, setIsEditable ] = useState(true);	
+	
+	const [submitted, setSubmitted] = useState(false);	
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target; 
 		setFormData((prevData) => ({
 			...prevData, 
-			[name]: value
+			[name]: value,
 		}))
 	}
-
+ 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		
+		setSubmitted(true);
+		console.log(formData)
 	} 
 
-	const handleEdit = () => {
-		setIsEditable(!isEditable);
-};
-return(
-<>
-	<Form 
-		formData={formData}
-		handleInputChange={handleInputChange}
-		isEditable={isEditable}
-		/>
-	<Edit 
-		isEditable={isEditable}
-		handleEdit={handleEdit}
-		/>
-	<Submit 
-		isEditable={isEditable}
-		handleSubmit={handleSubmit}
-		/>
-</ >
-)}
+	return(
+		<Form 
+			submitted={submitted}
+			formData={formData}
+			handleSubmit={handleSubmit}
+			handleInputChange={handleInputChange}/>
+	)
 
+}
 export default App; 
-
 

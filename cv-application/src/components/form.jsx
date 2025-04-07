@@ -2,127 +2,124 @@ import React from "react";
 import Submit from "./submit";
 
 
-const Form = ({ formData, handleInputChange, isEditable }) => {
+const Form = ({ formData, handleInputChange, handleSubmit }) => {
 
 return(
-	<>
-	<h1>General Information</h1>
-	<div className="general">
-
-		<input 
-			type="text"
-			placeholder="Name"
-			name="nameInput"
-			value={formData.nameInput}
-			disabled={!isEditable}
-			onChange={handleInputChange}
-			/>
-		<input 
-			type="email"
-			placeholder="Email"
-			name="emailInput"
-			value={formData.emailInput}
-			disabled={!isEditable}
-			onChange={handleInputChange}
-			/>
-		<input 
-			type="phone"
-			placeholder="Phone"
-			name="phoneInput"
-			value={formData.phoneInput}
-			disabled={!isEditable}
-			onChange={handleInputChange}
-			/>
-	</div>
+	<form onSubmit={handleSubmit}>
+		<h1>General Information</h1>
+			<div className="general">
+				<label htmlFor="name">Name:</label> 
+					<input  
+						id="name"
+						type="text"
+						name="name"
+						defaultValue={formData.name}
+						onChange={handleInputChange}
+		
+					/>
+				<label htmlFor="email">Email:</label>
+					<input 
+						id="email"
+						type="email"
+						placeholder="example@gmail.com"
+						name="email"
+						defaultValue={formData.email}
+						onChange={handleInputChange}
+					/>
+				<label htmlFor="phone">Phone:</label>
+					<input 
+						id="phone"
+						type="phone"
+						placeholder="XXX-XXX-XXXX"
+						name="phone"
+						defaultValue={formData.phone}
+						onChange={handleInputChange}
+					/>
+			</div>
 
 	<h1>Educational Experience</h1>
 		<div className="education">
-	
-			<input 
-				type="text"
-				placeholder="School Name"
-				name="schoolInput"
-				value={formData.schoolInput}
-				disabled={!isEditable}
-				onChange={handleInputChange}
+			<label htmlFor="school">School Name:</label>
+				<input 
+					id="school"
+					type="text"
+					name="school"
+					defaultValue={formData.school}
+					onChange={handleInputChange}
 				/>
-			<input 
-				type="text"
-				placeholder="Title of Study"
-				name="studyInput"
-				value={formData.studyInput}
-				disabled={!isEditable}
-				onChange={handleInputChange}
+			<label htmlFor="study">Title of Study:</label>
+				<input 
+					id="study"
+					type="text"
+					name="study"
+					defaultValue={formData.study}
+					onChange={handleInputChange}
 				/>
-		
-			<input 
-				type="date"
-				placeholder="Date Started"
-				name="studyDateInput"
-				value={formData.studyDateInput}
-				disabled={!isEditable}
-				onChange={handleInputChange}
+			<label htmlFor="studyStart">Date Started:</label>
+				<input 
+					id="studyStart"
+					type="date"
+					name="studyStart"
+					defaultValue={formData.studyStart}
+					onChange={handleInputChange}
 				/>
-
-			<input 
-				type="date"
-				placeholder="Date of Graduation"
-				name="graduationDateInput"
-				value={formData.graduationDateInput}
-				disabled={!isEditable}
-				onChange={handleInputChange}
+			<label>Date of Graduation:</label>
+				<input 
+					id="graduation"
+					type="date"
+					name="graduation"
+					defaultValue={formData.graduation}
+					onChange={handleInputChange}
 				/>
 
 		</div>
 
-		<h1>Practical Experience</h1>
-			<div className="practicalExperience">
+	<h1>Practical Experience</h1>
+		<div className="practicalExperience">
+			<label htmlFor="company">Company Name:</label>
 				<input 
+					id="company"
 					type="text"
-					placeholder="Company Name"
-					name="companyInput"
-					value={formData.companyInput}
-					disabled={!isEditable}
+					name="company"
+					defaultValue={formData.company}
+					onChange={handleInputChange}
+				/>
+			<label htmlFor="position">Position Title: </label>
+				<input 
+					id="position"
+					type="text"
+					name="position"
+					defaultValue={formData.position}
 					onChange={handleInputChange}
 					/>
+			<label htmlFor="responsibilities">Main Responsibilities:</label>
 				<input 
+					id="responsibilities"
 					type="text"
-					placeholder="Position Title"
-					name="positionInput"
-					value={formData.positionInput}
-					disabled={!isEditable}
+					name="responsibilities"
+					defaultValue={formData.responsibilities}
 					onChange={handleInputChange}
 					/>
-
+			<label htmlFor="start">Date Started:</label>
 				<input 
-					type="text"
-					placeholder="Main Responsibilities"
-					name="responsibilitiesInput"
-					value={formData.responsibilitiesInput}
-					disabled={!isEditable}
-					onChange={handleInputChange}
-					/>
-			
-				<input 
+					id="start"
 					type="date"
-					placeholder="Start Date"
-					name="startDateInput"
-					value={formData.startDateInput}
-					disabled={!isEditable}
+					name="start"
+					defaultValue={formData.start}
 					onChange={handleInputChange}
 					/>
+			<label htmlFor="end">End Date:</label>
 				<input 
+					id="end"
 					type="date"
-					placeholder="End Date"
-					name="endDateInput"
-					value={formData.endDateInput}
-					disabled={!isEditable}
+					name="end"
+					defaultValue={formData.end}
 					onChange={handleInputChange}
 					/>
 			</div>
 
-			<Submit />
-		</ >
+				<Submit />
+		</form>
 )
 }
 

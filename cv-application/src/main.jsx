@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './components/app'
 import Edit from './components/edit'
 import Submit from './components/submit'
+import Form from './components/form'
 
 
 

@@ -2,13 +2,13 @@ import React from 'react';
 
 
 
-const Submit = ({ isEditable, handleSubmit }) => {
+const Submit = ({ handleSubmit }) => {
+
 	return (
 	<button
 		type="submit"
-		disabled={!isEditable}
 		onClick={() => handleSubmit}
-		>
+		>Submit	
 	</ button>
 	)
 }
