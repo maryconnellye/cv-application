@@ -3,7 +3,6 @@ import React from 'react';
 
 
 const Submit = ({ handleSubmit }) => {
-
 	return (
 	<button
 		type="submit"

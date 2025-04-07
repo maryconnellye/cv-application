@@ -1,9 +1,12 @@
 import React, { useState } from "react"
 import Form from "./form";
 import Edit from "./edit";
+import Submit from "./submit";
 
 const App = () => {
-
+	
+	const [submitted, setSubmitted] = useState(false);	
+	const [isEditable, setIsEditable ] = useState(true);
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "", 
@@ -20,8 +23,6 @@ const App = () => {
 		isEditable: "",
 		handleInputChange: ""
 	});
-	
-	const [submitted, setSubmitted] = useState(false);	
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target; 
@@ -34,17 +35,29 @@ const App = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setSubmitted(true);
+		setIsEditable(false);
 		console.log(formData)
-	} 
+	}
 
+		
+	const handleEdit = () => {
+			setIsEditable(true);
+		}
+		
 	return(
+	<>
 		<Form 
+			isEditable={isEditable}
 			submitted={submitted}
 			formData={formData}
 			handleSubmit={handleSubmit}
-			handleInputChange={handleInputChange}/>
-	)
+			handleInputChange={handleInputChange}
+			handleEdit={handleEdit}
+			/>
 
+			{isEditable ? <Submit /> : <Edit />}
+	</ >
+)
 }
 export default App; 
 

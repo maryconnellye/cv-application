@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Edit = () => {
-const [ isEditable, setIsEditable ] = useState(true);
-	const handleEdit = () => {
-		setIsEditable(!isEditable);
-	}
+const Edit = ({ handleEdit }) => {
+;
 	return (
 	<button 
 		className="edit"
 		type="button"
-		disabled={!isEditable}
-		onClick={()=>handleEdit}
+		onClick={() => handleEdit}
 		>Edit
 	</button>
 	)

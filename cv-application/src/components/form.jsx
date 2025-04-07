@@ -1,5 +1,4 @@
 import React from "react";
-import Submit from "./submit";
 
 
 const Form = ({ formData, handleInputChange, handleSubmit }) => {
@@ -117,8 +116,6 @@ return(
 					onChange={handleInputChange}
 					/>
 			</div>
-
-				<Submit />
 		</form>
 )
 }
