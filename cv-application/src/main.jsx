@@ -8,6 +8,7 @@ import Form from './components/form'
 
 
 createRoot(document.getElementById('root')).render(
+  /** Strict mode should only wrap <App />. the Edit and Submit components should not be here, they should be inside of App.jsx */
   <StrictMode>
     <App />
     <Edit />
