@@ -45,18 +45,24 @@ const App = () => {
 		}
 		
 	return(
-	<>
-		<Form 
-			editMode={editMode}
-			submitted={submitted}
-			formData={formData}
-			handleSubmit={handleSubmit}
-			handleInputChange={handleInputChange}
-			handleEdit={handleEdit}
-			/>
+	
+		{editMode ? (
+		
 
-			{editMode ? <Submit /> : <Edit />}
-	</ >
+		):(
+
+		)}
+			// editMode={editMode}
+			// submitted={submitted}
+			// formData={formData}
+			// handleSubmit={handleSubmit}
+			// handleInputChange={handleInputChange}
+			// handleEdit={handleEdit}
+			// />
+
+			// {editMode ? <Submit /> : <Edit />}
+
+			// {editMode ? }
 )
 }
 export default App; 
